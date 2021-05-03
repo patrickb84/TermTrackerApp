@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="TermTrackerApp.Views.DashboardPage"
+    Title="Dashboard">
+    <ContentPage.Content>
+        <StackLayout Margin="20,35,20,20">
+            <BoxView Color="#6F42C1"
+             CornerRadius="10"
+             WidthRequest="160"
+             HeightRequest="160"
+             VerticalOptions="Center"
+             HorizontalOptions="Center"
+             Margin="0,0,0,30" />
+
+            <Label Text="TERM TRACKER" Margin="0,0,0,15"  HorizontalOptions="Center" FontSize="36" />
+            <Label Text="Welcome to Term Tracker, an app for organizing your terms and courses for your college career. Get started below."
+                   HorizontalOptions="Center"
+                   Margin="0,0,0,30" />
+            <Button Text="ADD A TERM"
+                    TextColor="white"
+                    BackgroundColor="#3D7BFF"
+                    Clicked="HandleAddATerm" />
+            <Button Text="VIEW ALL TERMS"
+                    TextColor="white"
+                    BackgroundColor="#343A40"
+                    Clicked="HandleViewAllTerms" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

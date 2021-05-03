@@ -1,0 +1,41 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2012" />  
+    <PackageReference Include="Xamarin.Essentials" Version="1.6.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="Views\AppShell.xaml.cs">
+      <DependentUpon>AppShell.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="images\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="images\flaticon_bell.png" />
+    <None Remove="images\flaticon_stack.png" />
+    <None Remove="images\flaticon_list.png" />
+    <None Remove="images\flaticon_squaremenu.png" />
+    <None Remove="images\flaticon_house.png" />
+    <None Remove="images\flaticon_clock.png" />
+    <None Remove="images\flaticon_calendar.png" />
+    <None Remove="images\flaticon_grid.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="images\flaticon_bell.png" />
+    <EmbeddedResource Include="images\flaticon_stack.png" />
+    <EmbeddedResource Include="images\flaticon_list.png" />
+    <EmbeddedResource Include="images\flaticon_squaremenu.png" />
+    <EmbeddedResource Include="images\flaticon_house.png" />
+    <EmbeddedResource Include="images\flaticon_clock.png" />
+    <EmbeddedResource Include="images\flaticon_calendar.png" />
+    <EmbeddedResource Include="images\flaticon_grid.png" />
+  </ItemGroup>
+</Project>

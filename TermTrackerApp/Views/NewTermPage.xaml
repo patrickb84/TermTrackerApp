@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="TermTrackerApp.Views.NewTermPage"
+    Title="New Term">
+    <ContentPage.Content>
+        <FlexLayout Direction="Column"
+            AlignItems="Center"
+            JustifyContent="Center">
+            <Label Text="Add New Term" />
+            
+            <Button Text="SUBMIT"
+                    WidthRequest="200"
+                    TextColor="white"
+                    BackgroundColor="#28A746"
+                    Margin="0,15,0,5"/>
+            <Button Text="CLOSE"
+                    WidthRequest="200"
+                    TextColor="white"
+                    BackgroundColor="#6C757D"
+                    Clicked="HandleClose"/>
+        </FlexLayout>
+    </ContentPage.Content>
+</ContentPage>

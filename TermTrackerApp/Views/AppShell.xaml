@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms" 
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:local="clr-namespace:TermTrackerApp.Views"
+       Title="TermTrackerApp"
+       x:Class="TermTrackerApp.AppShell"
+       FlyoutBackground="#F8F9FA">
+
+    <!--<TabBar>
+        <ShellContent Title="Dashboard" Icon="icon_about.png"
+                      ContentTemplate="{DataTemplate local:DashboardPage}" />
+        <ShellContent Title="Terms" Icon="icon_feed.png"
+                      ContentTemplate="{DataTemplate local:TermsPage}" />
+        <ShellContent Title="Courses" Icon="icon_feed.png"
+                      ContentTemplate="{DataTemplate local:CoursesPage}" />
+        <ShellContent Title="Alerts" Icon="icon_feed.png"
+                      ContentTemplate="{DataTemplate local:NotificationsPage}" />
+    </TabBar>-->
+
+    <FlyoutItem Title="Dashboard" Icon="flaticon_stack.png">
+        <Tab>
+            <ShellContent Title="Dashboard"
+                          ContentTemplate="{DataTemplate local:DashboardPage}" />
+        </Tab>
+    </FlyoutItem>
+    <FlyoutItem Title="Terms" Icon="flaticon_calendar.png">
+        <Tab>
+            <ShellContent Title="Terms"
+                          ContentTemplate="{DataTemplate local:TermsPage}" />
+        </Tab>
+    </FlyoutItem>
+    <FlyoutItem Title="Courses" Icon="flaticon_grid.png">
+        <Tab>
+            <ShellContent Title="Courses"
+                          ContentTemplate="{DataTemplate local:CoursesPage}" />
+        </Tab>
+    </FlyoutItem>
+    <FlyoutItem Title="Notifications" Icon="flaticon_bell.png">
+        <Tab>
+            <ShellContent Title="Notifications"
+                          ContentTemplate="{DataTemplate local:NotificationsPage}" />
+        </Tab>
+    </FlyoutItem>
+</Shell>
