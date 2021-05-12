@@ -1,20 +1,75 @@
 ﻿<?xml version="1.0" encoding="UTF-8" ?>
 <ContentPage
     xmlns="http://xamarin.com/schemas/2014/forms"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:sys="clr-namespace:System;assembly=mscorlib"
     x:Class="TermTrackerApp.Views.NewTermPage"
     Title="New Term">
     <ContentPage.Content>
         <FlexLayout Direction="Column"
             AlignItems="Center"
             JustifyContent="Center">
-            <Label Text="Add New Term" />
-            
+            <Label Text="Add New Term" FontSize="36" Margin="0,0,0,30"/>
+
+            <Entry Placeholder="Term Name" WidthRequest="300" Margin="0,0,0,30"
+                   TextChanged="TermName_TextChanged"
+                   Completed="TermName_Completed"/>
+
+            <!--START DATE-->
+            <Label Text="Start Date" Margin="0,0,0,10"/>
+            <DatePicker VerticalOptions="CenterAndExpand"
+                        Date="{x:Static sys:DateTime.Now}"
+                        DateSelected="StartDatePicker_DateSelected"
+                        Margin="0,0,0,30"
+                        x:Name="startDatePicker"
+                        WidthRequest="300">
+                <DatePicker.Format>yyyy-MM-dd</DatePicker.Format>
+                <DatePicker.MinimumDate>
+                    <sys:DateTime x:FactoryMethod="Parse">
+                        <x:Arguments>
+                            <x:String>Jan 1 2021</x:String>
+                        </x:Arguments>
+                    </sys:DateTime>
+                </DatePicker.MinimumDate>
+                <DatePicker.MaximumDate>
+                    <sys:DateTime x:FactoryMethod="Parse">
+                        <x:Arguments>
+                            <x:String>Dec 31 2050</x:String>
+                        </x:Arguments>
+                    </sys:DateTime>
+                </DatePicker.MaximumDate>
+            </DatePicker>
+
+            <!--END DATE-->
+            <Label Text="End Date" Margin="0,0,0,10"/>
+            <DatePicker VerticalOptions="CenterAndExpand"
+                        Date="{x:Static sys:DateTime.Now}"
+                        DateSelected="EndDatePicker_DateSelected"
+                        Margin="0,0,0,30"
+                        x:Name="endDatePicker"
+                        WidthRequest="300">
+                <DatePicker.Format>yyyy-MM-dd</DatePicker.Format>
+                <DatePicker.MinimumDate>
+                    <sys:DateTime x:FactoryMethod="Parse">
+                        <x:Arguments>
+                            <x:String>Jan 1 2021</x:String>
+                        </x:Arguments>
+                    </sys:DateTime>
+                </DatePicker.MinimumDate>
+                <DatePicker.MaximumDate>
+                    <sys:DateTime x:FactoryMethod="Parse">
+                        <x:Arguments>
+                            <x:String>Dec 31 2050</x:String>
+                        </x:Arguments>
+                    </sys:DateTime>
+                </DatePicker.MaximumDate>
+            </DatePicker>
+
             <Button Text="SUBMIT"
                     WidthRequest="200"
                     TextColor="white"
                     BackgroundColor="#28A746"
-                    Margin="0,15,0,5"/>
+                    Margin="0,15,0,5"
+                    Clicked="FormSubmit_Clicked"/>
             <Button Text="CLOSE"
                     WidthRequest="200"
                     TextColor="white"
