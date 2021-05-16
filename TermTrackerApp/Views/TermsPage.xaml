@@ -2,30 +2,25 @@
 <ContentPage
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    x:Class="TermTrackerApp.Views.TermsPage" Title="Terms">
+    x:Class="TermTrackerApp.Views.TermsPage" Title="Term Tracker">
     <ContentPage.Content>
         <StackLayout Margin="20,35,20,20">
-            <CollectionView ItemsSource="{Binding Terms}"
+            <CollectionView ItemsSource="{Binding AllTerms}"
                             SelectionMode="Single"
                             SelectionChanged="CollectionView_SelectionChanged">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
-                        <Grid Padding="15"
+                        <Grid Padding="0"
                               RowDefinitions="Auto, *"
                               ColumnDefinitions="Auto, *">
-                            <Label Text="{Binding TermTitle}"
-                                   FontAttributes="Bold"
-                                   FontSize="24"
-                                   Grid.RowSpan="2"
-                                   VerticalOptions="Center"/>
-                            <Label Text="{Binding StartDate}"
-                                   Grid.Column="1"
-                                   HorizontalOptions="End"/>
-                            <Label Text="{Binding EndDate}"
+                            <Label Text="{Binding Title}"
                                    Grid.Row="1"
-                                   Grid.Column="1"
-                                   HorizontalOptions="End"
-                                   VerticalOptions="End"/>
+                                   VerticalOptions="Center"
+                                   FontSize="16"/>
+                            <Label Text="{Binding DisplayDates}"
+                                   Grid.Row="2"
+                                   FontSize="12"
+                                   HorizontalOptions="End"/>
                         </Grid>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
